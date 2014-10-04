@@ -7,5 +7,13 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/httpmime-4.1.3.jar"/>
 	<classpathentry kind="lib" path="libs/Volley_bin.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Core-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Email-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-QZone-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-ShortMessage-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-SinaWeibo-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Wechat-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Wechat-Core-2.4.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/library"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
