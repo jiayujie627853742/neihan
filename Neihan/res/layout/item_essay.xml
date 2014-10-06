@@ -57,6 +57,7 @@
                 android:layout_height="30dp"
                 android:background="@drawable/gif_btn_bg"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:text="GIF" />
         </FrameLayout>
     </LinearLayout>
