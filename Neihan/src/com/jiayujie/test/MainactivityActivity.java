@@ -23,11 +23,16 @@ import com.jiayujie.android_neihan.bean.Comment;
 import com.jiayujie.android_neihan.bean.CommentList;
 import com.jiayujie.android_neihan.bean.EntityList;
 
-//测试网络连接获取数据
+/**
+ * 测试网络连接获取数据
+ * @author jiayujie
+ */
 public class MainactivityActivity extends Activity implements Listener<String>,OnClickListener {
 	
-	//定义一个常量
-	//ID为1代表文本，为2代表图片
+	/**
+	 * 定义一个常量
+	 * ID为1代表文本，为2代表图片
+	 */
 	public static final int CATEGORY_TEXT=1;
 	public static final int CATEGORY_IMAGE=2;
 	
@@ -48,7 +53,7 @@ public class MainactivityActivity extends Activity implements Listener<String>,O
 		queue = Volley.newRequestQueue(this);
 		
 		itemCount = 30;
-//		ClientAPI.getList(0,queue,itemCount, CATEGORY_TEXT,this);
+		ClientAPI.getList(0,queue,itemCount, CATEGORY_TEXT,this);
 		button=(Button)this.findViewById(R.id.button1);
 		button.setOnClickListener(this);
 		
@@ -64,7 +69,10 @@ public class MainactivityActivity extends Activity implements Listener<String>,O
 	 */
 	public void onResponse(String arg0) {
 		// TODO 自动生成的方法存根
-		// Log.i("TestActivity", "======List"+arg0);
+		
+		/**
+		 * 获取评论列表
+		 */
 		try {
 			JSONObject json=new JSONObject(arg0);
 			arg0=json.toString(4);
@@ -96,7 +104,6 @@ public class MainactivityActivity extends Activity implements Listener<String>,O
 			List<Comment> recentComments = commentList.getRecentComments();
 			//TODO  直接把commentList提交给listView的Adapter ，这样可以进行是否还有内容的判断
 			
-			
 			if (recentComments!=null) {
 				for(Comment comment:recentComments){
 					Log.i("", "======"+comment.getText());
@@ -108,7 +115,10 @@ public class MainactivityActivity extends Activity implements Listener<String>,O
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
-		/*try {
+		/**
+		 * 获取段子内容
+		 */
+		try {
 			
 			JSONObject json = new JSONObject(arg0);
 			arg0=json.toString(4);
@@ -134,7 +144,7 @@ public class MainactivityActivity extends Activity implements Listener<String>,O
 			//
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}*/
+		}
 	}
 	@Override
 	public void onClick(View v) {
