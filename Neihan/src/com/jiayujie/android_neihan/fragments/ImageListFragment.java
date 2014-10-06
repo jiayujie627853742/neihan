@@ -22,7 +22,7 @@ public class ImageListFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO 自动生成的方法存根
-		View view = inflater.inflate(R.layout.fragment_imagelist, container,false);
+		View view = inflater.inflate(R.layout.fragment_imagelist, container,false);//建议使用3个参数的inflate方法
 		return view;
 	}
 	

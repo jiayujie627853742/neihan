@@ -8,7 +8,7 @@ import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.jiayujie.test.MainactivityActivity;
+import com.jiayujie.test.TestactivityActivity;
 
 /**
  * 所有和服务器接口对接的方法全部在这个类里面
@@ -28,8 +28,8 @@ public class ClientAPI {
 		 * @param catefarytype   要获取的参数的类型
 		 * @param  listener 用于获取段子列表的回调接口，任何调用getList方法时，此参数用更新段子列表
 		 * @param minTime  用作分页加载数据，或者是下拉刷新时用，代表的是上一次服务器返回的信息
-		 * @see  MainactivityActivity#CATEGORY_TEXT
-		 * @see  MainactivityActivity#CATEGORY_IMAGE
+		 * @see  TestactivityActivity#CATEGORY_TEXT
+		 * @see  TestactivityActivity#CATEGORY_IMAGE
 		 */
 		public  static void getList(long minTime,RequestQueue queue,int itemCount,int catefarytype,Response.Listener<String> listener){
 			String CATEGORY_LIST_API="http://ic.snssdk.com/2/essay/zone/category/data/";

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval" >
+
+    <!-- 形状内部的背景色  带透明度的灰色 -->
+    <solid android:color="#88666666" />
+    <!-- 形状外边的边框信息，宽度1dp  并且填充色是白色 -->
+    <stroke
+        android:width="1dp"
+        android:color="#fff" />
+    <!-- 指定内边距 -->
+    <padding
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp" />
+
+</shape>

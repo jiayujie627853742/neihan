@@ -27,7 +27,7 @@ import com.jiayujie.android_neihan.bean.EntityList;
  * 测试网络连接获取数据
  * @author jiayujie
  */
-public class MainactivityActivity extends Activity implements Listener<String>,OnClickListener {
+public class TestactivityActivity extends Activity implements Listener<String>,OnClickListener {
 	
 	/**
 	 * 定义一个常量

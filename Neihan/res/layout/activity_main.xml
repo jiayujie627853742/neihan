@@ -14,10 +14,7 @@
         android:layout_weight="1" >
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    
 
         <RadioGroup
             android:id="@+id/main_tab_bar"
@@ -58,6 +55,5 @@
                 android:drawableTop="@drawable/main_tab_item_my_bg"
                 android:text="@string/main_tab_item_mine" />
         </RadioGroup>
-    </LinearLayout>
 
 </LinearLayout>
