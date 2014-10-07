@@ -12,18 +12,26 @@
         <ImageView
             android:id="@+id/item_profile_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:src="@drawable/default_round_head"
+            android:focusable="false"
+            />
 
         <TextView
             android:id="@+id/item_profile_nick"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            />
     </LinearLayout>
 
     <TextView
         android:id="@+id/item_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" 
+        android:focusable="false"
+        />
 
     <LinearLayout
         android:id="@+id/item_image_container"
@@ -37,7 +45,9 @@
             android:id="@+id/item_image_download_progress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="2dp" />
+            android:layout_height="2dp" 
+            android:focusable="false"
+            />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -49,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="center"
+                android:focusable="false"
                 android:src="@drawable/ic_launcher" />
 
             <TextView
@@ -58,6 +69,7 @@
                 android:background="@drawable/gif_btn_bg"
                 android:gravity="center"
                 android:layout_gravity="center"
+                android:focusable="false"
                 android:text="GIF" />
         </FrameLayout>
     </LinearLayout>
@@ -79,7 +91,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@drawable/item_digg_bg"
-                android:text="111" />
+                android:text="111111" 
+                android:focusable="false"
+                />
         </LinearLayout>
 
         <View
@@ -98,7 +112,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@drawable/item_bury_bg"
-                android:text="111" />
+                android:text="111"
+                android:focusable="false"
+                 />
         </LinearLayout>
 
         <View
@@ -118,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawableLeft="@drawable/item_comment_bg"
+                android:focusable="false"
                 android:text="111" />
         </LinearLayout>
 
@@ -137,9 +154,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:src="@drawable/item_more_action_bg" />
+                android:src="@drawable/item_more_action_bg"
+                android:focusable="false"
+                />
         </LinearLayout>
-
         
     </LinearLayout>
 

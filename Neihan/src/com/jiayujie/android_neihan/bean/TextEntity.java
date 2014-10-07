@@ -1,5 +1,7 @@
 package com.jiayujie.android_neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -117,7 +119,13 @@ import android.R.integer;
         "max_time": 1411872657
     }
 }*/
-public class TextEntity {
+public class TextEntity implements Serializable {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8993382623043041273L;
 	private int type;
 	private long createTime;
 	private int userbury;//代表当前用户是否踩了，0代表没有。

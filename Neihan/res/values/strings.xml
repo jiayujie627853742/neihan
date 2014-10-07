@@ -10,5 +10,7 @@
     <string name="main_tab_item_review">审核</string>
     <string name="main_tab_item_activity">活动</string>
     <string name="main_tab_item_mine">我的</string>
+    <string name="title_activity_essay_detail">EssayDetailActivity</string>
+    <string name="essay_detail_title">详情</string>
 
 </resources>

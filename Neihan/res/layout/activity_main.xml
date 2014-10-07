@@ -14,8 +14,6 @@
         android:layout_weight="1" >
     </FrameLayout>
 
-    
-
         <RadioGroup
             android:id="@+id/main_tab_bar"
             android:layout_width="match_parent"

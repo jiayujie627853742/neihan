@@ -38,10 +38,10 @@ public class TestactivityActivity extends Activity implements Listener<String>,O
 	
 	//声明队列
 	private  RequestQueue queue;
+	private long lastTime;
 	
 	private Button button;
 	private int itemCount;
-	private long lastTime;
 	private long groupId;
 	private int offset;
 

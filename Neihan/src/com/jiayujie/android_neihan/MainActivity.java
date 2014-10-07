@@ -37,7 +37,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		fragments.add(new ReviewFragment());
 		fragments.add(new HuodongFragment());
 		fragments.add(new MineFragment());
-		switchFragment(0);
+		showFragment(0);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 				break;
 			}
 		}
-		switchFragment(checkedIndex);
+		showFragment(checkedIndex);
 		
 		/*switch (checkedIndex) {
 		case 0:
@@ -71,7 +71,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		transaction.commit();*/
 	}
 
-	public void switchFragment(int checkedIndex) {
+	public void showFragment(int checkedIndex) {
 		Fragment fragment=fragments.get(checkedIndex);
 		FragmentManager manager=getSupportFragmentManager();
 		FragmentTransaction transaction=manager.beginTransaction();

@@ -1,5 +1,6 @@
 package com.jiayujie.android_neihan.bean;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,7 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UrlList {
+public class UrlList implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2112542546518531982L;
 
 	//生成get方法
 	public List<String> getLargeImageUrls() {
