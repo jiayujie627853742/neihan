@@ -34,10 +34,12 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView.Validator;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 /**
  * 1、列表界面，第一次启动，并且数据为空的时候自动加载数据
  * 2、只要列表没有数据，进入这个界面的时候，就尝试加载数据
@@ -100,8 +102,8 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 //		if (entities==null) {
 //			entities=new LinkedList<TextEntity>();
 //		}
-		
-		adapter=new EssayAdapter(getActivity(), entities,inflater,CATEGORY_TEXT);
+		requestCategory=CATEGORY_TEXT;
+		adapter=new EssayAdapter(getActivity(), entities,CATEGORY_TEXT);
 		
 		//TODO  1、获取listView并且设置数据
 				
@@ -113,9 +115,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 				refreshListView.setMode(Mode.BOTH);//设置模式 双向加载
 				 ListView listView=refreshListView.getRefreshableView();
 				
-//				ListView listView=(ListView)view.findViewById(R.id.textlist_listview);
-				
-				
 	 	        header = inflater.inflate(R.layout.textlist_header_tools, listView,false);
 				listView.addHeaderView(header);
 				
@@ -125,12 +124,7 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 				View quickReview=header.findViewById(R.id.quick_tools_review);
 				quickReview.setOnClickListener(this);
 				
-				
-				listView.setOnScrollListener(this);
-				listView.setOnItemClickListener(this);
-				
-		
-		//TODO  2、获取 快速的工具调（发布和审核），用于列表滚动的显示和隐藏
+				//TODO  2、获取 快速的工具调（发布和审核），用于列表滚动的显示和隐藏
 				
 				quickTools = view.findViewById(R.id.textlist_quick_tools);//默认隐藏
 				quickTools.setVisibility(View.GONE);
@@ -148,6 +142,10 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 				textNotifiy.setVisibility(View.GONE);
 				
 				
+				listView.setOnScrollListener(this);
+//				listView.setOnItemSelectedListener(this);
+				listView.setOnItemClickListener(this);
+				listView.setDividerHeight(15);
 				listView.setAdapter(adapter);
 		return view;
 	}
@@ -184,8 +182,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 		
 	}
 	
-	
-	
 	private Handler handler=new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			int what=msg.what;
@@ -194,7 +190,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 				textNotifiy.setVisibility(View.INVISIBLE);
 			}
 		};
-		
 	};
 	@Override
 	public void onClick(View v) {
@@ -318,11 +313,13 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		// TODO 自动生成的方法存根
-		position--;
+//		Toast.makeText(getActivity(), "嘿嘿，你点到我了哦", Toast.LENGTH_SHORT).show();
+		position-=2;
 		Intent  intent=new Intent(getActivity(), EssayDetailActivity.class);
-		intent.putExtra("curretEssayPosition", position);
+		intent.putExtra("currentEssayPosition", position);
 		intent.putExtra("category", requestCategory);
+		Log.i("", "======"+position);
 		startActivity(intent);
-		
 	}
+	
 }

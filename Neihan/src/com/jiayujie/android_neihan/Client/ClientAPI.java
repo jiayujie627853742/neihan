@@ -1,11 +1,8 @@
 package com.jiayujie.android_neihan.Client;
 
 import com.android.volley.Request;
-import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.Response.ErrorListener;
-import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.jiayujie.test.TestactivityActivity;
@@ -32,8 +29,7 @@ public class ClientAPI {
 		 * @see  TestactivityActivity#CATEGORY_IMAGE
 		 */
 		public  static void getList(long minTime,RequestQueue queue,int itemCount,int catefarytype,Response.Listener<String> listener){
-			String CATEGORY_LIST_API="http://ic.snssdk.com/2/essay/zone/category/data/";
-			//根据类型获取不同的数据
+			String CATEGORY_LIST_API="http://ic.snssdk.com/2/essay/zone/category/data/";//根据类型获取不同的数据
 			String categoryParam="category_id="+catefarytype;
 			String countParam="count="+itemCount;
 			String deviceParam="KFTT";

@@ -5,7 +5,6 @@ import java.io.Serializable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.integer;
 
 /**
  * @author jiayujie
@@ -291,4 +290,23 @@ public class TextEntity implements Serializable {
 	public UserEneity getUser() {
 		return user;
 	}
+
+	@Override
+	public String toString() {
+		return "TextEntity [type=" + type + ", createTime=" + createTime
+				+ ", userbury=" + userbury + ", userfavorite=" + userfavorite
+				+ ", buryCount=" + buryCount + ", favoriteCount="
+				+ favoriteCount + ", shareUrl=" + shareUrl + ", lable=" + lable
+				+ ", content=" + content + ", commentCount=" + commentCount
+				+ ", status=" + status + ", hasComments=" + hasComments
+				+ ", goDetailCount=" + goDetailCount + ", statusDesc="
+				+ statusDesc + ", userDigg=" + userDigg + ", groupID="
+				+ groupID + ", level=" + level + ", repinCount=" + repinCount
+				+ ", diggCount=" + diggCount + ", hasHotComments="
+				+ hasHotComments + ", userRepin=" + userRepin + ", categoryID="
+				+ categoryID + ", onlineTime=" + onlineTime + ", displayTime="
+				+ displayTime + ", user=" + user + "]";
+	}
+	
+	
 }

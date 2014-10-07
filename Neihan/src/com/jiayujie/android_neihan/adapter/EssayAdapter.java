@@ -31,11 +31,11 @@ public class EssayAdapter extends BaseAdapter{
 	
 	private int categoryType;
 	
-	public EssayAdapter(Context context,List<TextEntity> entities,LayoutInflater inflater,int categoryType){
+	public EssayAdapter(Context context,List<TextEntity> entities,int categoryType){
 		this.context=context;
 		this.entities=entities;
-		this.inflater=inflater;
 		this.categoryType=categoryType;
+		inflater=LayoutInflater.from(context);
 	}
 	
 	@Override
@@ -82,8 +82,10 @@ public class EssayAdapter extends BaseAdapter{
 		/**
 		 * 设置图片段子相应的控件消失
 		 */
-		holder.gifImageView.setVisibility(View.GONE);
-		holder.btnGifPlay.setVisibility(View.GONE);
+		if (categoryType==1) {
+			holder.gifImageView.setVisibility(View.GONE);
+			holder.btnGifPlay.setVisibility(View.GONE);
+		}
 		//================================
 		/**
 		 * 先设置文本内容的数据
@@ -128,7 +130,5 @@ public class EssayAdapter extends BaseAdapter{
 		public CheckBox chbBuryCount;//踩，包含个数，如果已经踩过，则禁用
 		public TextView txtCommentCount;//评论个数，点击可以查看评论
 		public ImageButton btnShare;//分享操作
-		
 	}
-	
 }

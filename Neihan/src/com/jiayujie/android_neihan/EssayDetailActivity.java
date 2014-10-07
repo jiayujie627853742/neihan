@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +32,6 @@ public class EssayDetailActivity extends FragmentActivity {
 	
 	private DetailPagerAdapter adapter;
 
-	private Intent intent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class EssayDetailActivity extends FragmentActivity {
 		if (extras!=null) {
 			category=extras.getInt("category",1);
 			currentEssayPosition=extras.getInt("currentEssayPosition", 0);
+			Log.i("currentEssayPosition", "======currentEssayPosition : "+currentEssayPosition);
 		}
 		
 		DataStore dataStore = DataStore.getInstance();
@@ -58,6 +59,7 @@ public class EssayDetailActivity extends FragmentActivity {
 		}else if (category==2) {
 			entities=dataStore.getImageEntities();
 		}
+		Log.i("entities", "======entities : "+entities.get(currentEssayPosition).toString());
 		
 		adapter=new DetailPagerAdapter(getSupportFragmentManager(), entities);
 		

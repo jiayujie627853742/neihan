@@ -1,7 +1,6 @@
 package com.jiayujie.test;
 
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONException;

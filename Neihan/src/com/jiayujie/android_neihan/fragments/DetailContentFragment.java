@@ -253,7 +253,6 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 			
 			if (recentComments!=null) {
 				for(Comment comment:recentComments){
-					Log.i("", "======"+comment.getText());
 				}
 			}
 			offset+=20;//分页标识，要求服务器每次返回20条评论。通过hasMore判断是否还需要分页。

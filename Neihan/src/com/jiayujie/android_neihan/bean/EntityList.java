@@ -44,7 +44,6 @@ public class EntityList {
 						ADEntity entity=new ADEntity();
 						entity.parseJSON(item);
 					
-						Log.i("hehe", "======guanggao"+entity.getDownload_url());
 					}else if (type==1) {
 						JSONObject group =  item.getJSONObject("group");
 						int cid=group.getInt("category_id");
@@ -61,7 +60,6 @@ public class EntityList {
 						entities.add(entity);
 						
 						long groupID = entity.getGroupID();
-						Log.i("hehe", "======"+(i++)+","+entity.getGroupID());
 					}
 				}
 //				for (int i = 0; i < entities.size(); i++) {
@@ -91,6 +89,4 @@ public class EntityList {
 	public List<TextEntity> getEntities() {
 		return entities;
 	}
-	
-	
 }
