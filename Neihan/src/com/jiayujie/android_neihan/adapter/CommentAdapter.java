@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CommentAdapter extends BaseAdapter {
-	
+	//////////////////////////////////
 	private List<Comment> comments;
 	private LayoutInflater inflater;
 	
