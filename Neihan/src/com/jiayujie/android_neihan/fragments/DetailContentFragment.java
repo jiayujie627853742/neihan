@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import pl.droidsonroids.gif.GifImageView;
+import cn.sharesdk.framework.i;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.Listener;
@@ -125,19 +126,13 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 		TextView btnGifPlay = (TextView) ret.findViewById(R.id.btngifplay);
 		ImageButton btnShare = (ImageButton) ret.findViewById(R.id.item_share);
 		CheckBox chbBuryCount = (CheckBox) ret.findViewById(R.id.item_bury_count);
-		CheckBox chbDiggCount = (CheckBox) ret
-				.findViewById(R.id.item_digg_count);
-		GifImageView gifImageView = (GifImageView) ret
-				.findViewById(R.id.gifView);
-		ImageView imgprofileImage = (ImageView) ret
-				.findViewById(R.id.item_profile_image);
-		ProgressBar pbDownloadProgress = (ProgressBar) ret
-				.findViewById(R.id.item_image_download_progress);
-		TextView txtCommentCount = (TextView) ret
-				.findViewById(R.id.item_comment_count);
+		CheckBox chbDiggCount = (CheckBox) ret.findViewById(R.id.item_digg_count);
+		GifImageView gifImageView = (GifImageView) ret.findViewById(R.id.gifView);
+		ImageView imgprofileImage = (ImageView) ret.findViewById(R.id.item_profile_image);
+		ProgressBar pbDownloadProgress = (ProgressBar) ret.findViewById(R.id.item_image_download_progress);
+		TextView txtCommentCount = (TextView) ret.findViewById(R.id.item_comment_count);
 		TextView txtContent = (TextView) ret.findViewById(R.id.item_content);
-		TextView txtprofileNick = (TextView) ret
-				.findViewById(R.id.item_profile_nick);
+		TextView txtprofileNick = (TextView) ret.findViewById(R.id.item_profile_nick);
 		
 		
 		
@@ -166,6 +161,7 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 		 */
 		//TODO  加载各种图片数据
 	}
+	
 	/**
 	 * 处理ScrollView 触摸事件，用于在ScrollView滚动到最低端的时候自动加载数据
 	 */
@@ -224,6 +220,7 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 //			Log.i("", "======评论"+arg0);
 		
 			CommentList commentList=new CommentList();
+			
 			/**
 			 * 评论列表包含两组数据，一个是热门评论，另一个是新鲜评论
 			 * 热门评论和新鲜评论可能是空的。
@@ -256,8 +253,11 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 				}
 			}
 			offset+=20;//分页标识，要求服务器每次返回20条评论。通过hasMore判断是否还需要分页。
-
 			//TODO  扩充listView的内容
+			
+			hotCommentListView.requestLayout();
+			recentCommentListView.requestLayout();
+			
 			int  childCount=hotCommentListView.getChildCount();
 			if (childCount>0) {
 				int totalHeight=0;
@@ -269,8 +269,17 @@ public class DetailContentFragment extends Fragment implements OnTouchListener, 
 				layoutParams.height=totalHeight;
 				hotCommentListView.setLayoutParams(layoutParams);
 			}
-			
-			
+			childCount=recentCommentListView.getChildCount();
+			if (childCount>0) {
+				int totalHeight=0;
+				for(int i=0;i<childCount;i++){
+					View view=recentCommentListView.getChildAt(i);
+					totalHeight+=view.getHeight();
+				}
+				ViewGroup.LayoutParams ps = recentCommentListView.getLayoutParams();
+				ps.height= totalHeight;
+				recentCommentListView.setLayoutParams(ps);
+			}
 		} catch (JSONException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();

@@ -143,7 +143,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 				
 				
 				listView.setOnScrollListener(this);
-//				listView.setOnItemSelectedListener(this);
 				listView.setOnItemClickListener(this);
 				listView.setDividerHeight(15);
 				listView.setAdapter(adapter);
@@ -174,7 +173,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 	public void onDestroyView() {
 		// TODO 自动生成的方法存根
 		super.onDestroyView();
-		
 		this.adapter=null;
 		this.header=null;
 		this.quickTools=null;
@@ -198,8 +196,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 		switch (id) {
 		case R.id.textlist_title:
 			textNotifiy.setVisibility(View.VISIBLE);
-//			handler.obtainMessage(1);
-//			handler.sendMessageDelayed(handler.obtainMessage(1), 3000);
 			handler.sendEmptyMessageDelayed(1, 3000);
 			break;
 		}
@@ -233,7 +229,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 		}
 		lastIndex=firstVisibleItem;
 	}
-	
 	
 	/**
 	 * 列表的上拉加载和下拉刷新事件
@@ -294,7 +289,6 @@ public class TextListFragment extends Fragment implements OnClickListener, OnScr
 					}else {
 						//TODO  没有获取到网络数据，可能是数据解析错误、网络错误，需要提示一下。
 					}
-					
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}

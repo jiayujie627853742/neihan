@@ -49,7 +49,6 @@ public class EssayDetailActivity extends FragmentActivity {
 		if (extras!=null) {
 			category=extras.getInt("category",1);
 			currentEssayPosition=extras.getInt("currentEssayPosition", 0);
-			Log.i("currentEssayPosition", "======currentEssayPosition : "+currentEssayPosition);
 		}
 		
 		DataStore dataStore = DataStore.getInstance();
